@@ -1,84 +1,54 @@
-# 💊 Aplikasi Apotek - JavaFX
+ 💊 Aplikasi Apotek - JavaFX
+Aplikasi Apotek adalah program desktop sederhana berbasis JavaFX dan MySQL yang digunakan untuk mengelola data pasien, dokter, resep, obat, dan transaksi. Seluruh data tersimpan langsung ke database MySQL menggunakan koneksi JDBC. Aplikasi ini dirancang dengan pendekatan Object-Oriented Programming (OOP) untuk menjaga struktur kode tetap modular dan mudah dikembangkan.
 
-Aplikasi Apotek adalah program desktop sederhana berbasis **JavaFX** dan **MySQL** yang digunakan untuk mengelola data pasien, dokter, resep, obat, dan transaksi. Aplikasi ini dibangun dengan menerapkan prinsip **Object-Oriented Programming (OOP)** secara konsisten.
+🧩 Fitur Utama
+Input data Pasien
 
-## 🧩 Fitur Utama
+Input data Dokter
 
-- Input data **Pasien**
-- Input data **Dokter**
-- Input data **Resep** (terhubung ke Pasien dan Dokter)
-- Input data **Obat**
-- Input **Transaksi Pembelian** (terhubung ke Resep dan Obat)
+Input data Resep (terhubung ke Pasien dan Dokter)
 
-Seluruh data disimpan langsung ke **database MySQL** melalui koneksi JDBC.
+Input data Obat
 
-## 🧠 Penerapan OOP (Object-Oriented Programming)
+Input data Transaksi (terhubung ke Resep dan Obat)
 
-Aplikasi ini menerapkan empat prinsip dasar OOP:
+🧠 Penerapan OOP (Object-Oriented Programming)
+Aplikasi ini mengimplementasikan prinsip dasar OOP sebagai berikut:
 
----
+1. Encapsulation
+Setiap atribut dan logika dikemas dalam class dan hanya diakses melalui method tertentu.
 
-### 1. **Encapsulation (Enkapsulasi)**  
-Semua atribut dan operasi tiap entitas (seperti pasien, dokter, dll) disimpan di dalam controller masing-masing. Akses ke elemen UI dikontrol secara ketat menggunakan `private`.
-
-🔹 **Contoh:**
-```java
-@FXML
-private TextField txtId, txtNama;
-
-@FXML
-private void simpanPasien() {
-    String id = txtId.getText();
-    String nama = txtNama.getText();
-    // Proses simpan data
-}
-
-2. Abstraction (Abstraksi)
-Koneksi database dibungkus dalam satu class terpisah (Koneksi.java) sehingga pengguna tidak perlu mengetahui detail teknis koneksi JDBC.
-
-🔹 Contoh:
+java
+Salin
+Edit
+private TextField txtNama;
+public void simpanPasien() { ... }
+2. Abstraction
+Detail teknis seperti koneksi ke database disembunyikan dari pengguna dan dibungkus dalam class khusus.
 
 java
 Salin
 Edit
 public class Koneksi {
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
-    }
+    public static Connection getConnection() { ... }
 }
-
-3. Inheritance (Pewarisan)
-Konsep pewarisan diterapkan pada struktur kode untuk menyederhanakan logika antar entitas yang mirip. Misalnya, class Orang bisa menjadi superclass untuk Pasien dan Dokter.
-
-🔹 Contoh:
+3. Inheritance
+Class Pasien dan Dokter mewarisi atribut umum dari superclass Orang.
 
 java
 Salin
 Edit
-public class Orang {
-    protected String nama;
-    protected String alamat;
-}
-
-public class Pasien extends Orang {
-    private String idPasien;
-}
-
-public class Dokter extends Orang {
-    private String idDokter;
-}
-
-4. Polymorphism (Polimorfisme)
-Method yang sama digunakan pada setiap controller (misalnya simpanData()), namun implementasinya berbeda tergantung kebutuhan modul.
-
-🔹 Contoh:
+class Orang { String nama; }
+class Pasien extends Orang { String id; }
+class Dokter extends Orang { String spesialis; }
+4. Polymorphism
+Setiap modul memiliki method simpanData() yang sama namun dengan implementasi yang berbeda sesuai kebutuhan.
 
 java
 Salin
 Edit
 public void simpanData() {
-    // Di ObatController: simpan ke tabel obat
-    // Di TransaksiController: simpan ke tabel transaksi
+    // Implementasi khusus untuk masing-masing controller
 }
-
-Link Video Run: 
+🎥 Link Demo
+Klik di sini untuk melihat video running aplikasi (ganti dengan link YouTube jika tersedia)
