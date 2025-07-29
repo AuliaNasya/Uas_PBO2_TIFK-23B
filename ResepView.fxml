@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.apotek.ResepController"
+      style="-fx-background-color: linear-gradient(to bottom, #e0f7fa, #ffffff); -fx-padding: 30;">
+    
+    <Label text="Form Input Resep"
+           style="-fx-font-size: 20px; -fx-text-fill: #00796b; -fx-font-weight: bold;" />
+
+    <TextField fx:id="txtIdResep" promptText="ID Resep"
+               style="-fx-pref-width: 250px; -fx-font-size: 14px;" />
+    <TextField fx:id="txtIdPasien" promptText="ID Pasien"
+               style="-fx-pref-width: 250px; -fx-font-size: 14px;" />
+    <TextField fx:id="txtIdDokter" promptText="ID Dokter"
+               style="-fx-pref-width: 250px; -fx-font-size: 14px;" />
+    <TextField fx:id="txtTanggal" promptText="Tanggal (YYYY-MM-DD)"
+               style="-fx-pref-width: 250px; -fx-font-size: 14px;" />
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Simpan" onAction="#simpanResep"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-font-size: 14px;" />
+        <Button text="Lanjut ke Obat" onAction="#pindahKeObat"
+                style="-fx-background-color: #00695c; -fx-text-fill: white; -fx-font-size: 14px;" />
+    </HBox>
+</VBox>
+

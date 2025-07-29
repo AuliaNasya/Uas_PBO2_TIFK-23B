@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.apotek.TransaksiController"
+      style="-fx-background-color: #f0f8ff; -fx-padding: 25; -fx-border-radius: 10; -fx-background-radius: 10;">
+
+    <Label text="Form Input Transaksi"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2e8b57;"/>
+
+    <TextField fx:id="txtId" promptText="ID Transaksi"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+    <TextField fx:id="txtresep_id" promptText="ID Resep"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+    <TextField fx:id="txtobat_id" promptText="ID Obat"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+    <TextField fx:id="txtjumlah" promptText="Jumlah Obat"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+    <TextField fx:id="txttotal_harga" promptText="Total Harga"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+    <TextField fx:id="txttanggal" promptText="Tanggal (YYYY-MM-DD)"
+               style="-fx-font-size: 14px; -fx-background-radius: 6;"/>
+
+    <Button text="Simpan" onAction="#simpanTransaksi"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 6 16;"/>
+
+</VBox>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.apotek.ObatController"
+      prefWidth="400" prefHeight="450"
+      style="-fx-background-color: linear-gradient(to bottom right, #f0fff0, #d0f0ff); -fx-padding: 30;">
+
+    <Label text="Form Input Obat" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtId" promptText="ID Obat" style="-fx-font-size: 14px; -fx-pref-height: 35px;"/>
+    <TextField fx:id="txtNama" promptText="Nama Obat" style="-fx-font-size: 14px; -fx-pref-height: 35px;"/>
+    <TextField fx:id="txtHarga" promptText="Harga" style="-fx-font-size: 14px; -fx-pref-height: 35px;"/>
+
+    <Button text="Simpan" onAction="#simpanObat"
+            style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+    <!-- Tombol tambahan untuk ke halaman Transaksi -->
+    <Button text="Ke Transaksi" onAction="#keTransaksi"
+            style="-fx-font-size: 14px; -fx-padding: 10 20; -fx-background-color: #2196F3; -fx-text-fill: white;"/>
+</VBox>
