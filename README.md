@@ -16,6 +16,7 @@ Input data Transaksi (terhubung ke Resep dan Obat)
 Aplikasi ini mengimplementasikan prinsip dasar OOP sebagai berikut:
 
 1. Encapsulation
+   
 Setiap atribut dan logika dikemas dalam class dan hanya diakses melalui method tertentu.
 
 java
@@ -25,6 +26,7 @@ private TextField txtNama;
 public void simpanPasien() { ... }
 
 2. Abstraction
+   
 Detail teknis seperti koneksi ke database disembunyikan dari pengguna dan dibungkus dalam class khusus.
 
 java
@@ -35,6 +37,7 @@ public class Koneksi {
 }
 
 3. Inheritance
+   
 Class Pasien dan Dokter mewarisi atribut umum dari superclass Orang.
 
 java
@@ -45,6 +48,7 @@ class Pasien extends Orang { String id; }
 class Dokter extends Orang { String spesialis; }
 
 4. Polymorphism
+   
 Setiap modul memiliki method simpanData() yang sama namun dengan implementasi yang berbeda sesuai kebutuhan.
 
 java
